@@ -189,8 +189,9 @@ def regex_handler(choice, repo):
 
 
 def ui_loop(repo, log_buf, state, is_gist=False):
-    choice = input_handler(state, is_gist)
-
+    #choice = input_handler(state, is_gist)
+    # automatically add to the logfile
+    choice = "a"
     if choice == "c":
         state.bad_signatures.append(ssdeep.hash(repo.decoded_content))
     elif choice == "u":
